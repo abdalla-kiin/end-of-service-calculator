@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://abdalla-kiin.github.io/end-of-service-calculator/sitemap.xml
