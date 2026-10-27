@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حاسبة مكافأة نهاية الخدمة في السعودية</title>
+<meta name="description" content="احسب مكافأة نهاية الخدمة في السعودية مجاناً حسب نظام العمل (المواد 84 و85 و87): إنهاء العقد أو الاستقالة، بنتيجة فورية وبدون تسجيل.">
+<meta name="theme-color" content="#0e5a4f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="حاسبة مكافأة نهاية الخدمة في السعودية">
+<meta property="og:description" content="احسب مكافأة نهاية الخدمة في السعودية مجاناً حسب نظام العمل (المواد 84 و85 و87): إنهاء العقد أو الاستقالة، بنتيجة فورية وبدون تسجيل.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="حاسبة مكافأة نهاية الخدمة في السعودية">
+<meta name="twitter:description" content="احسب مكافأة نهاية الخدمة في السعودية مجاناً حسب نظام العمل (المواد 84 و85 و87): إنهاء العقد أو الاستقالة، بنتيجة فورية وبدون تسجيل.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "حاسبة مكافأة نهاية الخدمة", "description": "احسب مكافأة نهاية الخدمة في السعودية مجاناً حسب نظام العمل (المواد 84 و85 و87): إنهاء العقد أو الاستقالة، بنتيجة فورية وبدون تسجيل.", "inLanguage": "ar", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SAR"}, "audience": {"@type": "Audience", "geographicArea": {"@type": "Country", "name": "المملكة العربية السعودية"}}}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;700&display=swap">
+<style>
+/* Layout: one narrow column. Form on top, live result under it, rules and payment deadlines last. */
+:root {
+  --bg: #f2f4f2;
+  --surface: #ffffff;
+  --fg: #14211e;
+  --muted: #566661;
+  --line: #d9dfdc;
+  --accent: #0e5a4f;
+  --accent-fg: #ffffff;
+  --amount: #8a5a00;
+  --amount-bg: #fbf1dc;
+  --warn: #9a3412;
+  --font-display: "Reem Kufi", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, "Segoe UI", Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513; --surface: #16201d; --fg: #e8efec; --muted: #9db0aa; --line: #2a3835;
+    --accent: #4fc3ae; --accent-fg: #07211c; --amount: #f0c36a; --amount-bg: #2a2212; --warn: #f4a261;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1513; --surface: #16201d; --fg: #e8efec; --muted: #9db0aa; --line: #2a3835;
+  --accent: #4fc3ae; --accent-fg: #07211c; --amount: #f0c36a; --amount-bg: #2a2212; --warn: #f4a261;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+  direction: rtl; text-align: right;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; }
+.lede { color: var(--muted); margin: 6px 0 0; max-width: 60ch; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field.wide { grid-column: 1 / -1; }
+label { font-weight: 500; font-size: 0.95rem; }
+.hint { color: var(--muted); font-size: 0.82rem; margin: 0; }
+input, select {
+  font: inherit; color: var(--fg); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%; min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.unit { position: relative; }
+.unit input { padding-inline-end: 56px; }
+.unit span { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.sample { color: var(--muted); font-size: 0.82rem; margin: 14px 0 0; }
+.result { display: flex; flex-direction: column; gap: 16px; }
+.total { background: var(--amount-bg); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px; }
+.total small { color: var(--amount); font-weight: 600; }
+.total strong { font-family: var(--font-display); font-size: 2.4rem; line-height: 1.2; color: var(--amount); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.total .sar { font-size: 1rem; font-family: var(--font-body); font-weight: 500; margin-inline-start: 6px; }
+.verdict { margin: 0; font-size: 0.95rem; }
+.verdict.zero { color: var(--warn); font-weight: 500; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 9px 0; border-bottom: 1px solid var(--line); text-align: right; vertical-align: top; }
+th { font-weight: 400; color: var(--muted); padding-inline-end: 12px; }
+td { font-weight: 500; white-space: nowrap; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+td.fine { white-space: normal; color: var(--muted); font-weight: 400; font-size: 0.85rem; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+button {
+  font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: var(--accent-fg); border: 0; border-radius: 8px; padding: 10px 18px;
+}
+button:hover { filter: brightness(1.08); }
+.status { color: var(--muted); font-size: 0.88rem; }
+ul.rules { margin: 0; padding-inline-start: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+.rules li { padding-inline-start: 2px; }
+.foot { color: var(--muted); font-size: 0.82rem; margin: 0; }
+@media (max-width: 480px) {
+  form { grid-template-columns: 1fr; }
+  h1 { font-size: 1.7rem; }
+  .total strong { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main dir="rtl" lang="ar">
+  <header>
+    <h1>حاسبة مكافأة نهاية الخدمة</h1>
+    <p class="lede">احسب مستحقاتك حسب نظام العمل السعودي (المواد 84 و85 و87). النتيجة تظهر مباشرة وبدون تسجيل.</p>
+  </header>
+
+  <section class="panel" aria-labelledby="inputs-h">
+    <h2 id="inputs-h">بياناتك</h2>
+    <form id="calc-form" autocomplete="off" novalidate>
+      <div class="field wide">
+        <label for="wage">آخر أجر شهري</label>
+        <div class="unit"><input id="wage" type="number" inputmode="decimal" min="0" step="any" value="8000"><span>ريال</span></div>
+        <p class="hint">الأساسي مع البدلات الثابتة (سكن، نقل) حسب آخر أجر تقاضيته.</p>
+      </div>
+      <div class="field">
+        <label for="years">سنوات الخدمة</label>
+        <div class="unit"><input id="years" type="number" inputmode="numeric" min="0" max="60" step="1" value="7"><span>سنة</span></div>
+      </div>
+      <div class="field">
+        <label for="months">أشهر إضافية</label>
+        <div class="unit"><input id="months" type="number" inputmode="numeric" min="0" max="11" step="1" value="6"><span>شهر</span></div>
+      </div>
+      <div class="field wide">
+        <label for="reason">كيف انتهت علاقة العمل؟</label>
+        <select id="reason">
+          <option value="end">انتهاء العقد أو إنهاء صاحب العمل له</option>
+          <option value="resign">استقالة العامل</option>
+          <option value="special">استقالة عاملة بسبب الزواج أو الولادة (المادة 87)</option>
+          <option value="art81">ترك العامل العمل لسبب من حالات المادة 81</option>
+          <option value="art80">فسخ صاحب العمل العقد وفق المادة 80</option>
+        </select>
+      </div>
+    </form>
+    <p class="sample">الأرقام الظاهرة مثال تجريبي (8,000 ريال، 7 سنوات و6 أشهر). غيّرها لتحسب حالتك.</p>
+  </section>
+
+  <section class="panel result" aria-labelledby="result-h" aria-live="polite">
+    <h2 id="result-h">النتيجة</h2>
+    <div class="total">
+      <small>المكافأة المستحقة</small>
+      <strong><span id="out-total">0</span><span class="sar">ريال</span></strong>
+    </div>
+    <p class="verdict" id="verdict"></p>
+    <div class="table-wrap">
+      <table>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="actions">
+      <button type="button" id="copy-btn">نسخ النتيجة</button>
+      <span class="status" id="copy-status" role="status"></span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>كيف تُحسب؟</h2>
+    <ul class="rules">
+      <li>أول 5 سنوات: أجر نصف شهر عن كل سنة.</li>
+      <li>بعد 5 سنوات: أجر شهر كامل عن كل سنة إضافية.</li>
+      <li>أجزاء السنة تُحسب بنسبة ما قضيته منها.</li>
+      <li>عند الاستقالة (المادة 85): لا شيء قبل سنتين، ثلث المكافأة من سنتين إلى أقل من 5، ثلثاها من 5 إلى أقل من 10، وكاملة عند 10 سنوات فأكثر.</li>
+      <li>موعد الصرف (المادة 88): خلال أسبوع إذا أنهى صاحب العمل العقد، وخلال أسبوعين إذا أنهاه العامل.</li>
+    </ul>
+  </section>
+
+  <p class="foot">هذه الحاسبة تقدير استرشادي وليست استشارة قانونية. العقد الفردي أو اللوائح الداخلية قد تعطيك أكثر من الحد النظامي. عند الخلاف راجع مكتب العمل أو محامياً.</p>
+</main>
+
+<script>
+(function () {
+  try { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } catch (e) {}
+
+  var REASON_LABEL = {
+    end: "انتهاء العقد أو إنهاء صاحب العمل",
+    resign: "استقالة العامل",
+    special: "استقالة عاملة بسبب الزواج أو الولادة",
+    art81: "ترك العمل لسبب من المادة 81",
+    art80: "فسخ العقد وفق المادة 80"
+  };
+
+  function calc(wage, years, months, reason) {
+    var total = years + months / 12;
+    var first = Math.min(total, 5) * wage / 2;
+    var rest = Math.max(total - 5, 0) * wage;
+    var full = first + rest;
+    var share = 1, note = "";
+    if (reason === "resign") {
+      if (total < 2) { share = 0; note = "مدة خدمتك أقل من سنتين، ولا مكافأة عند الاستقالة."; }
+      else if (total < 5) { share = 1 / 3; note = "استقالة بعد سنتين وقبل 5 سنوات: تستحق ثلث المكافأة."; }
+      else if (total < 10) { share = 2 / 3; note = "استقالة بعد 5 سنوات وقبل 10: تستحق ثلثي المكافأة."; }
+      else { share = 1; note = "استقالة بعد 10 سنوات فأكثر: تستحق المكافأة كاملة."; }
+    } else if (reason === "art80") {
+      share = 0; note = "الفسخ وفق المادة 80 يُسقط المكافأة.";
+    } else if (reason === "special") {
+      note = "المادة 87 تعطي العاملة المكافأة كاملة في هذه الحالة.";
+    } else if (reason === "art81") {
+      note = "الترك لسبب من المادة 81 يُعامل كإنهاء من صاحب العمل، فالمكافأة كاملة.";
+    } else {
+      note = "المكافأة كاملة وفق المادة 84.";
+    }
+    return { total: total, first: first, rest: rest, full: full, share: share, due: full * share, note: note };
+  }
+
+  function fmt(n) {
+    return Number(n).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  }
+  function num(id, max) {
+    var v = parseFloat(document.getElementById(id).value);
+    if (!isFinite(v) || v < 0) v = 0;
+    if (max != null && v > max) v = max;
+    return v;
+  }
+  function sharePct(s) {
+    if (s === 1) return "100%";
+    if (s === 0) return "0%";
+    if (Math.abs(s - 1 / 3) < 1e-9) return "الثلث (33.3%)";
+    return "الثلثان (66.7%)";
+  }
+
+  var lastText = "";
+  function render() {
+    var wage = num("wage");
+    var years = Math.floor(num("years", 60));
+    var months = Math.floor(num("months", 11));
+    var reason = document.getElementById("reason").value;
+    var r = calc(wage, years, months, reason);
+
+    document.getElementById("out-total").textContent = fmt(Math.round(r.due * 100) / 100);
+    var v = document.getElementById("verdict");
+    v.textContent = r.note;
+    v.className = "verdict" + (r.share === 0 ? " zero" : "");
+
+    var period = years + " سنة" + (months ? " و" + months + " شهر" : "");
+    var rows = [
+      ["مدة الخدمة", period, ""],
+      ["عن أول 5 سنوات (نصف شهر لكل سنة)", fmt(Math.round(r.first * 100) / 100) + " ريال", ""],
+      ["عما بعد 5 سنوات (شهر لكل سنة)", fmt(Math.round(r.rest * 100) / 100) + " ريال", ""],
+      ["المكافأة الكاملة", fmt(Math.round(r.full * 100) / 100) + " ريال", ""],
+      ["النسبة المستحقة", sharePct(r.share), ""],
+      ["المستحق لك", fmt(Math.round(r.due * 100) / 100) + " ريال", ""]
+    ];
+    var tb = document.getElementById("rows");
+    tb.innerHTML = "";
+    rows.forEach(function (row) {
+      var tr = document.createElement("tr");
+      var th = document.createElement("th"); th.scope = "row"; th.textContent = row[0];
+      var td = document.createElement("td"); td.textContent = row[1];
+      tr.appendChild(th); tr.appendChild(td); tb.appendChild(tr);
+    });
+
+    lastText = "حاسبة نهاية الخدمة\n" +
+      "آخر أجر: " + fmt(wage) + " ريال\n" +
+      "مدة الخدمة: " + period + "\n" +
+      "سبب الانتهاء: " + REASON_LABEL[reason] + "\n" +
+      "المكافأة المستحقة: " + fmt(Math.round(r.due * 100) / 100) + " ريال\n" +
+      "(تقدير استرشادي حسب المواد 84 و85 من نظام العمل السعودي)";
+  }
+
+  function copyFallback(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  document.getElementById("copy-btn").addEventListener("click", function () {
+    var st = document.getElementById("copy-status");
+    function done(ok) { st.textContent = ok ? "تم النسخ." : "تعذر النسخ، حدد النتيجة وانسخها يدوياً."; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastText).then(function () { done(true); }, function () { done(copyFallback(lastText)); });
+    } else { done(copyFallback(lastText)); }
+  });
+
+  document.getElementById("calc-form").addEventListener("input", render);
+  document.getElementById("calc-form").addEventListener("submit", function (e) { e.preventDefault(); });
+  render();
+})();
+</script>
+</body>
+</html>
